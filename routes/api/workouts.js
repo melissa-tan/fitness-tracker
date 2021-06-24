@@ -1,33 +1,34 @@
 const router = require('express').Router();
-const db = require('../../models');
+const db = require('../../models/Workout.js');
 
 // ROUTES
 
 router.get('/', (req, res) => {
-  db.Workout.find()
+  db.find()
     .then((data) => res.status(200).json(data))
     .catch((error) => res.status(400).json(error));
 });
 
 router.post('/', (req, res) => {
-  db.Workout.create(req.body)
+    console.log(req.body);
+  db.create(req.body)
     .then((data) => res.status(200).json(data))
     .catch((error) => res.status(400).json(error));
 });
 
 router.put('/:id', (req, res) => {
-    console.log(req.body);
-  db.Workout.findOneAndUpdate(
+    console.log(req.body, req.params.id);
+  db.findOneAndUpdate(
     {
       _id: req.params.id,
     },
     {
       $push: {
         exercises: req.body,
-      }
-/*       $inc: {
+      },
+      $inc: {
         totalDuration: req.body.duration,
-      }, */
+      },
     }
   )
     .then((data) => res.json(data))
@@ -35,7 +36,7 @@ router.put('/:id', (req, res) => {
 });
 
 router.get('/range', (req, res) => {
-  db.Workout.find()
+  db.find()
     .then((data) => res.status(200).json(data))
     .catch((error) => res.status(400).json(error));
 });
