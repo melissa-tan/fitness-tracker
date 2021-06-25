@@ -37,6 +37,17 @@ Fitness tracker is an application to track your workout routines. The user can i
     ```
     node server.js
     ```
+2. Select `New Workout` to add a new workout <br>
+    ![Screenshot of the Fitness Tracker Homepage](./assets/images/fitness-tracker-home.png)
+
+3. Select the type of exercise <br>
+    ![Screenshot of the Exercise Selection](./assets/images/exercise-selection.png)
+
+4. Input the information, click add exercise, then click complete<br>
+    ![Screenshot of the Exercise Input](./assets/images/exercise-information.png)
+
+5. Click on Dashboard to view your exercise statistics.
+    ![Screenshot of the Dashboard](./assets/images/dashboard.png)
 
 
 
